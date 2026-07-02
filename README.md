@@ -7,8 +7,14 @@ Differential gene expression analysis of MZ1, PDD and GSK single drug treatments
 
 ## Results
 
-### Differential Expression Summary:
+### Quality Control plots:
+#### Principal Component Analysis plot:
+![PCA Plot](outputs/pca_plot.png)
+#### Sample-sample distances heat map:
+![sample distances heat map](outputs/sample_distances.png)
 
+### Differential Expression plots:
+#### Summary:
 Genes called significant at padj < 0.05 and |log2FC| > 1
 
 |                   |comparison         | total_genes|   up| down| total_sig|
@@ -22,5 +28,13 @@ Genes called significant at padj < 0.05 and |log2FC| > 1
 |MZ1+PDD vs PDD     |MZ1+PDD vs PDD     |       22213| 1919| 2491|      4410|
 |MZ1+GSK vs MZ1     |MZ1+GSK vs MZ1     |       20869|  853|  642|      1495|
 |MZ1+GSK vs GSK     |MZ1+GSK vs GSK     |       22213| 1846| 2463|      4309|
+
+#### Volcano plots:
+![outputs/volcano_plots.pdf](outputs/volcano_plots.pdf)
+#### Heatmaps:
+![outputs/heatmaps.pdf](outputs/heatmaps.pdf)
+#### GO Enrichment dot plots:
+![outputs/go_enrichment_dotplots.pdf](outputs/go_enrichment_dotplots.pdf)
+
 
 ## Discussion
