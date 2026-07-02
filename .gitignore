@@ -1,0 +1,14 @@
+# R workspace files
+*.RData
+*.RDS
+
+# GEO download folder
+GSE243615/
+
+# RStudio project files
+.Rproj.user/
+*.Rproj
+
+# R history
+.Rhistory
+.RData
