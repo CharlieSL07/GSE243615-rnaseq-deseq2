@@ -1,7 +1,25 @@
 # RNA-seq Differrential Expression Analysis of Single and Combination Drug Treatment (GSE243615)
-Differential gene expression analysis of MZ1, PDD and GSK single drug treatments and MZ1+PDD and MZ1+GSK combination treatments on HCT116 cells using DESeq2 and R.
+Differential gene expression analysis of MZ1, PDD and GSK single drug treatments and MZ1+PDD and MZ1+GSK combination treatments on HCT 116 cells using DESeq2 and R.
 
 ## Introduction
+This project is an independent reanalysis of RNA-seq data originally 
+collected and published by Mori et al. (2024):
+
+> Mori Y, Akizuki Y, Honda R, Takao M, et al. & Ohtake F (2024).
+> Intrinsic signaling pathways modulate targeted protein degradation.
+> *Nature Communications*. https://doi.org/10.1038/s41467-024-49519-z
+
+Raw count data were obtained from the NCBI Gene Expression Omnibus 
+(GEO accession: [GSE243615](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243615)).
+
+The original authors examined the transcriptional effects of the PROTAC BET
+degrader MZ1 in combination with the PARG inhibitor PDD00017273 and
+PERK inhibitor GSK2606414 in HCT 116 (RRID:CVCL_0291), an adherent human
+colorectal carcinoma cell line widely used in cancer biology, particularly
+for studying cell cycle regulation, DNA damage response, and drug sensitivity.
+Here I independently reproduce their differential expression analysis using
+DESeq2 and extend it withGO pathway enrichment analysis using clusterProfiler.
+
 
 ## Methods
 
