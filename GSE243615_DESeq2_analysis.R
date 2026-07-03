@@ -43,6 +43,11 @@
 #   Bioinformatics, 14, 1846-1847.
 #   https://doi.org/10.1093/bioinformatics/btm254
 #
+# knitr:
+#   Xie Y (2025).knitr: A General-Purpose Package for
+#   Dynamic Report Generation in R.
+#   https://yihui.org/knitr
+#
 # org.Hs.eg.db:
 #   Carlson M (2026). org.Hs.eg.db: Genome wide annotation for Human.
 #   Bioconductor. https://doi.org/10.18129/B9.bioc.org.Hs.eg.db
@@ -57,7 +62,7 @@
 #   statistical computing. R Foundation for Statistical Computing.
 #   https://www.R-project.org/
 # ============================================
-
+#
 # === 1. LOAD LIBRARIES ===
 # Run install lines once only, then comment out:
 # if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -65,9 +70,12 @@
 # BiocManager::install(c("DESeq2", "tidyverse", "pheatmap",
 #                        "clusterProfiler", "org.Hs.eg.db", "GEOquery",
 #                        "ashr", "enrichplot"))
+# install.packages("knitr")
+
 library(clusterProfiler)
 library(DESeq2)
 library(GEOquery)
+library(knitr)
 library(org.Hs.eg.db)
 library(pheatmap)
 library(tidyverse)
@@ -179,7 +187,7 @@ de_summary <- data.frame(
   total_sig   = sapply(results_list, function(r) sum(r$padj < 0.05 & abs(r$log2FoldChange) > 1, na.rm = TRUE))
 )
 
-print(de_summary)
+kable(de_summary, format = "markdown")
 write.csv(de_summary, "outputs/de_summary.csv", row.names = FALSE)
 
 # === 8. VISUALISATION ===
