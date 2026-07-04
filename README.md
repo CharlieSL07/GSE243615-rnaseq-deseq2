@@ -13,12 +13,14 @@ Raw count data were obtained from the NCBI Gene Expression Omnibus
 (GEO accession: [GSE243615](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243615)).
 
 The original authors examined the transcriptional effects of the PROTAC BET
-degrader MZ1 in combination with the PARG inhibitor PDD00017273 and
-PERK inhibitor GSK2606414 in HCT 116 (RRID:CVCL_0291), an adherent human
+degrader MZ1 in combination with the PARG (poly(ADP-ribose) glycohydrolase)
+inhibitor PDD00017273 and PERK (Protein kinase R-like endoplasmic reticulum
+kinase) inhibitor GSK2606414 in HCT 116 (RRID:CVCL_0291), an adherent human
 colorectal carcinoma cell line widely used in cancer biology, particularly
-for studying cell cycle regulation, DNA damage response, and drug sensitivity.
-Here I independently reproduce their differential expression analysis using
-DESeq2 and extend it withGO pathway enrichment analysis using clusterProfiler.
+for studying cell cycle regulation, DNA damage response, and drug
+sensitivity. Here I independently reproduce their differential expression
+analysis using DESeq2 and extend it withGO pathway enrichment analysis using
+clusterProfiler.
 
 The primary study found that the presence of PDD alone did not induce
 significant alterations in gene expression; however, enhanced alterations
@@ -58,5 +60,12 @@ Genes called significant at padj < 0.05 and |log2FC| > 1
 #### GO Enrichment dot plots:
 ![outputs/go_enrichment_dotplots.pdf](outputs/go_enrichment_dotplots.pdf)
 
-
 ## Discussion
+MZ1 is a PROTAC BET inhibitor, this molecule binds to an E3 ligase and a
+target protein (neosubstrate) in the BET protein family such as BRD4, BRD3
+and BRD2. This process causes interaction between the ligase and neosubstrate
+resulting in ubiquilation of the target neosubstrate and subsequent degredation
+via the proteasome. Specifically, BET proteins regulate gene transcription
+and chromatin architecture. MZ1 can effectively degrade BRD4; however, BRD3 and
+BRD2 degredation can be more challenging which can be aided by the function of
+inhibitors such as PDD and GSK (Mori et al., 2024).
