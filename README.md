@@ -20,6 +20,10 @@ for studying cell cycle regulation, DNA damage response, and drug sensitivity.
 Here I independently reproduce their differential expression analysis using
 DESeq2 and extend it withGO pathway enrichment analysis using clusterProfiler.
 
+The primary study found that the presence of PDD alone did not induce
+significant alterations in gene expression; however, enhanced alterations
+induced by MZ1. Unlike PDD, GSK altered a distinct subset of genes
+irrespective of the presence of MZ1, in addition to enhancing MZ1's effects.
 
 ## Methods
 
