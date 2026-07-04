@@ -60,6 +60,8 @@ Genes called significant at padj < 0.05 and |log2FC| > 1
 #### GO Enrichment dot plots:
 ![outputs/go_enrichment_dotplots.pdf](outputs/go_enrichment_dotplots.pdf)
 
+### Key findings:
+
 ## Discussion
 MZ1 is a PROTAC BET inhibitor, this molecule binds to an E3 ligase and a
 target protein (neosubstrate) in the BET protein family such as BRD4, BRD3
@@ -69,3 +71,5 @@ via the proteasome. Specifically, BET proteins regulate gene transcription
 and chromatin architecture. MZ1 can effectively degrade BRD4; however, BRD3 and
 BRD2 degredation can be more challenging which can be aided by the function of
 inhibitors such as PDD and GSK (Mori et al., 2024).
+
+## References
