@@ -34,7 +34,7 @@ the ubiquitination of the target protein and subsequent degradation via the
 proteasome. Specifically, BET proteins regulate gene transcription and
 chromatin architecture. MZ1 most potently degrades BRD4, while BRD3 and BRD2
 degradation is less efficient and may be enhanced by co-treatment with
-inhibitors such as PDD and GSK (Mori et al., 2024).). PDD and GSK exploit
+inhibitors such as PDD and GSK (Mori et al., 2024). PDD and GSK exploit
 distinct cellular stress pathways that may converge with BRD4-dependent
 transcription. I hypothesised that co-treatment with either compound would
 amplify MZ1-induced transcriptional changes, particularly in pathways 
@@ -42,9 +42,17 @@ associated with chromatin remodelling, MAPK/ERK signalling, and cell
 migration, producing a broader disruption of gene expression than MZ1 alone.
 
 ## Methods
-One GSK replicate was excluded from the counts matrix by the original authors,
+Raw counts were downloaded from GEO (GSE243615) and imported into R. One GSK
+replicate was excluded from the counts matrix by the original authors,
 presumably due to QC failure. GSK group therefore has 2 replicates whilst
-other conditions have 3.
+other conditions have 3. Differential expression analysis was performed using
+DESeq2 with a six-level factor design formula comprising vehicle (control), 
+PDD, MZ1, GSK, MZ1+PDD, and MZ1+GSK treatment groups. Log2 fold changes were
+shrunk using the ashr method. Genes were called significant at padj < 0.05
+and |log2FC| > 1. GO enrichment was performed using clusterProfiler with
+Entrez gene IDs against the org.Hs.eg.db annotation database, with
+Benjamini-Hochberg (BH) multiple testing correction at a significance
+threshold of padj < 0.05, in order to control the false discovery rate.
 
 ## Results
 
