@@ -1,5 +1,5 @@
-# RNA-seq Differrential Expression Analysis of Single and Combination Drug Treatment (GSE243615)
-Differential gene expression analysis of MZ1, PDD and GSK single drug treatments and MZ1+PDD and MZ1+GSK combination treatments on HCT 116 cells using DESeq2 and R.
+# RNA-seq Differential Expression Analysis of Single and Combination Drug Treatment (GSE243615)
+Differential gene expression analysis of MZ1, PDD and GSK single drug treatments and MZ1+PDD and MZ1+GSK combination treatments on HCT116 cells using DESeq2 and R.
 
 ## Introduction
 This project is an independent reanalysis of RNA-seq data originally 
@@ -15,19 +15,36 @@ Raw count data were obtained from the NCBI Gene Expression Omnibus
 The original authors examined the transcriptional effects of the PROTAC BET
 degrader MZ1 in combination with the PARG (poly(ADP-ribose) glycohydrolase)
 inhibitor PDD00017273 and PERK (Protein kinase R-like endoplasmic reticulum
-kinase) inhibitor GSK2606414 in HCT 116 (RRID:CVCL_0291), an adherent human
+kinase) inhibitor GSK2606414 in HCT116 (RRID:CVCL_0291), an adherent human
 colorectal carcinoma cell line widely used in cancer biology, particularly
 for studying cell cycle regulation, DNA damage response, and drug
 sensitivity. Here I independently reproduce their differential expression
-analysis using DESeq2 and extend it withGO pathway enrichment analysis using
+analysis using DESeq2 and extend it with GO pathway enrichment analysis using
 clusterProfiler.
 
-The primary study found that the presence of PDD alone did not induce
-significant alterations in gene expression; however, enhanced alterations
-induced by MZ1. Unlike PDD, GSK altered a distinct subset of genes
-irrespective of the presence of MZ1, in addition to enhancing MZ1's effects.
+The primary study found that PDD alone did not induce significant alterations
+in gene expression but enhanced the transcriptional alterations induced by
+MZ1. Unlike PDD, GSK altered a distinct subset of genes irrespective of MZ1
+co-treatment, while also enhancing MZ1's effects.
+
+MZ1 is a PROTAC-based BET protein degrader, this molecule binds to an E3
+ligase and a target protein in the BET protein family such as BRD4, BRD3 and
+BRD2. Interaction between the ligase and target protein result in
+the ubiquitination of the target protein and subsequent degradation via the
+proteasome. Specifically, BET proteins regulate gene transcription and
+chromatin architecture. MZ1 most potently degrades BRD4, while BRD3 and BRD2
+degradation is less efficient and may be enhanced by co-treatment with
+inhibitors such as PDD and GSK (Mori et al., 2024).). PDD and GSK exploit
+distinct cellular stress pathways that may converge with BRD4-dependent
+transcription. I hypothesised that co-treatment with either compound would
+amplify MZ1-induced transcriptional changes, particularly in pathways 
+associated with chromatin remodelling, MAPK/ERK signalling, and cell
+migration, producing a broader disruption of gene expression than MZ1 alone.
 
 ## Methods
+One GSK replicate was excluded from the counts matrix by the original authors,
+presumably due to QC failure. GSK group therefore has 2 replicates whilst
+other conditions have 3.
 
 ## Results
 
@@ -63,13 +80,6 @@ Genes called significant at padj < 0.05 and |log2FC| > 1
 ### Key findings:
 
 ## Discussion
-MZ1 is a PROTAC BET inhibitor, this molecule binds to an E3 ligase and a
-target protein (neosubstrate) in the BET protein family such as BRD4, BRD3
-and BRD2. This process causes interaction between the ligase and neosubstrate
-resulting in ubiquilation of the target neosubstrate and subsequent degredation
-via the proteasome. Specifically, BET proteins regulate gene transcription
-and chromatin architecture. MZ1 can effectively degrade BRD4; however, BRD3 and
-BRD2 degredation can be more challenging which can be aided by the function of
-inhibitors such as PDD and GSK (Mori et al., 2024).
+
 
 ## References
