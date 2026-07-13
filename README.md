@@ -167,4 +167,6 @@ in the future to overcome this bias.
   2(3), p.100141. https://doi.org/10.1016/j.xinn.2021.100141.
 
 Full package citations and software versions are provided in 
-[analysis.R](GSE243615_DESeq2_analysis.R) and the session info output.
+[GSE243615_DESeq2_analysis.R](GSE243615_DESeq2_analysis.R),
+[outputs/session_info.txt](outputs/session_info.txt) and the local session info
+output.
