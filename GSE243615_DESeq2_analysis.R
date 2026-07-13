@@ -187,7 +187,8 @@ de_summary <- data.frame(
   total_sig   = sapply(results_list, function(r) sum(r$padj < 0.05 & abs(r$log2FoldChange) > 1, na.rm = TRUE))
 )
 
-kable(de_summary, format = "markdown")
+kable(de_summary[, -1], format = "markdown", 
+      row.names = TRUE)
 write.csv(de_summary, "outputs/de_summary.csv", row.names = FALSE)
 
 # === 8. VISUALISATION ===
