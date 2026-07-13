@@ -131,14 +131,12 @@ dds <- DESeq(dds)
 # === 6. QC ===
 ## PCA (Principle Component Analysis) plot
 vsd <- vst(dds, blind = TRUE)
-plotPCA(vsd, intgroup = "condition") +
-  theme_minimal() +
-  ggtitle("PCA of all samples")
+pca <- plotPCA(vsd, intgroup = "condition") +
+          theme_minimal() +
+          ggtitle("PCA of all samples")
 
-png("outputs/pca_plot.png", width = 8, height = 6, units = "in", res = 300)
-print(plotPCA(vsd, intgroup = "condition") +
-        theme_minimal() +
-        ggtitle("PCA of all samples"))
+png("outputs/pca_plot.png", width = 10, height = 8, units = "in", res = 300)
+print(pca)
 dev.off()
 
 ## sample distance heat map
@@ -339,3 +337,8 @@ dev.off()
 
 # === 10. SESSION INFO ===
 sessionInfo()
+
+capture.output(
+  sessionInfo(),
+  file = "outputs/session_info.txt"
+)
