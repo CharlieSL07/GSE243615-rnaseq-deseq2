@@ -32,7 +32,7 @@ co-treatment, while also enhancing MZ1's effects (Mori et al., 2024).
 MZ1 is a PROTAC-based BET protein degrader that recruits an E3 ubiquitin
 ligase and a target protein in the BET family such as BRD4, BRD3 and
 BRD2 (Guo, Zheng and Peng, 2023). Interaction between the ligase and target
-protein result in the ubiquitination of the target protein and subsequent
+protein results in the ubiquitination of the target protein and subsequent
 degradation via the proteasome (Guo, Zheng and Peng, 2023). Specifically,
 BET proteins regulate gene transcription and chromatin architecture
 (Guo, Zheng and Peng, 2023). MZ1 most potently degrades BRD4, while BRD3 and
@@ -43,7 +43,7 @@ transcription (Mori et al., 2024). I hypothesised that co-treatment with
 either compound would amplify MZ1-induced transcriptional changes,
 particularly in pathways associated with chromatin remodelling, MAPK/ERK
 signalling, and cell migration, producing a more widespread transcriptional
-disruption than MZ1 alone(Guo, Zheng and Peng, 2023) (Tee et al., 2014).
+disruption than MZ1 alone (Guo, Zheng and Peng, 2023) (Tee et al., 2014).
 
 ## Methods
 Raw counts were downloaded from GEO (GSE243615) and imported into R. One GSK
@@ -61,8 +61,8 @@ discovery rate.
 
 ## Results
 
-### Quality Control plots:
-#### Principal Component Analysis plot:
+### Quality control plots:
+#### Principal component analysis plot:
 ![PCA Plot](outputs/pca_plot.png)
 #### Sample-to-sample distances heat map:
 ![sample distances heat map](outputs/sample_distances.png)
@@ -87,7 +87,7 @@ Genes called significant at padj < 0.05 and |log2FC| > 1
 ![outputs/volcano_plots.pdf](outputs/volcano_plots.pdf)
 #### Heatmaps:
 ![outputs/heatmaps.pdf](outputs/heatmaps.pdf)
-#### GO Enrichment dot plots:
+#### GO enrichment dot plots:
 ![outputs/go_enrichment_dotplots.pdf](outputs/go_enrichment_dotplots.pdf)
 
 ### Key findings:
@@ -113,7 +113,7 @@ transcriptional programmes. Both combination treatments produced significantly
 more differentially expressed genes than MZ1 alone, supporting the original 
 authors' conclusion that PDD and GSK enhance MZ1-induced transcriptional
 disruption, possibly due to enhanced BRD3 and BRD2 degradation. However,
-the combination treatments somewhat differed in enrichment profiles
+the combination treatments somewhat differed in enrichment profiles,
 suggesting PDD and GSK engage in different secondary stress pathways.
 
 GO enrichment of the combination vs single drug comparisons revealed a 
@@ -128,14 +128,14 @@ architecture (Tee et al., 2014). Additionally, MAPK pathways were also
 enriched in some conditions consistent with known BRD4 regulation of MAPK
 signalling and chromatin remodelling (Guo, Zheng and Peng, 2023).
 
-Several limitations should be noted. The GSK condition has only 2 samples
+One limitation of this reanalysis is that the GSK condition has only 2 samples
 following exclusion of one sample by the original authors, reducing statistical
 power for GSK-containing comparisons. Additionally, GO enrichment terms such as
 blood circulation and hormone regulation — which appear prominently despite
 HCT116 being a colon carcinoma line — likely reflect annotation bias in the GO 
 database rather than genuine biological significance, a known limitation of 
-overrepresentation analysis. Future work could apply GSEA using the full ranked
-gene list to reduce this bias.
+overrepresentation analysis. GSEA using the full ranked gene list could be used
+in the future to overcome this bias.
 
 ## References
 
@@ -167,4 +167,4 @@ gene list to reduce this bias.
   2(3), p.100141. https://doi.org/10.1016/j.xinn.2021.100141.
 
 Full package citations and software versions are provided in 
-[analysis.R](analysis.R) and the session info output.
+[analysis.R](GSE243615_DESeq2_analysis.R) and the session info output.
