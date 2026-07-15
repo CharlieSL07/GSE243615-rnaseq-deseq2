@@ -91,18 +91,18 @@ Genes called significant at padj < 0.05 and |log2FC| > 1
 ![outputs/go_enrichment_dotplots.pdf](outputs/go_enrichment_dotplots.pdf)
 
 ### Key findings:
-- PDD alone induced minimal transcriptional change (1 significant 
-  gene vs vehicle).
+- PDD alone induced minimal transcriptional change (1 significant gene vs
+  vehicle).
 - MZ1 alone produced 2,397 significant DE genes, with GO enrichment 
-  identifying nucleosome assembly and ERK1/2 cascade as the most 
+  identifying nucleosome assembly and ERK1/2 cascade as some of the most 
   enriched pathways.
-- Both combination treatments approximately doubled the number of 
-  DE genes compared to MZ1 alone.
-- Chemotaxis and cell migration pathways were specifically enriched 
-  in both combination vs single drug comparisons (MZ1+PDD vs MZ1 
-  and MZ1+GSK vs MZ1) but not in MZ1 alone.
-- MZ1+PDD and MZ1+GSK produced partially distinct enrichment 
-  profiles beyond their shared chemotaxis signal.
+- Both combination treatments significantly increased the number of DE genes
+  compared to MZ1 alone.
+- Chemotaxis and cell migration pathways were specifically enriched in both
+  combination vs single drug comparisons (MZ1+PDD vs MZ1 and MZ1+GSK vs MZ1)
+  but not in MZ1 alone.
+- MZ1+PDD and MZ1+GSK produced partially distinct enrichment profiles beyond
+  their shared chemotaxis signal.
 
 ## Discussion
 My reanalysis found results broadly in line with those of Mori et al. (2024).
