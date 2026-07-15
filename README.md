@@ -47,7 +47,7 @@ disruption than MZ1 alone (Guo, Zheng and Peng, 2023) (Tee et al., 2014).
 
 ## Methods
 Raw counts were downloaded from GEO (GSE243615) and imported into R. One GSK
-replicate was excluded from the counts matrix by the original authors,
+replicate was excluded from the raw counts matrix by the original authors,
 presumably due to QC failure. GSK group therefore has 2 replicates, while
 other conditions have 3. Differential expression analysis was performed using
 DESeq2 with a six-level factor design formula comprising vehicle (control), 
